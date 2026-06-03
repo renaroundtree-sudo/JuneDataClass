@@ -77,8 +77,8 @@ if prompt := st.chat_input("What is up?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
 # Display assistant response in chat message container
-with st.chat_message("assistant"):
-    response = st.write_stream(response_generator())
+    with st.chat_message("assistant"):
+        response = st.write_stream(response_generator())
 
 # Add assistant response to chat history
 st.session_state.messages.append({"role": "assistant", "content": response})
